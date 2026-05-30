@@ -1,5 +1,13 @@
 
 services:
+  php:
+    image: php:8.3-cli
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: php -S 0.0.0.0:8000 -t public
+    ports:
+      - "8000:8000"
 ###> doctrine/doctrine-bundle ###
   database:
     ports:
